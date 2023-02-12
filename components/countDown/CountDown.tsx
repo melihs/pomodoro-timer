@@ -17,8 +17,9 @@ const CountDown: FC<Types> = ({timerDate}) => {
 
   return (
     <View>
-      <Text
-        style={styles.timerCountDownText}>{`${minutes()}: ${seconds()}`}</Text>
+      <Text style={styles.timerCountDownText}>
+        {`${minutes()}: ${seconds()}`}
+      </Text>
     </View>
   );
 }

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 
 import {AppContext} from "./AppContext";
@@ -30,7 +30,6 @@ const App = () => {
   return (
     <AppContext.Provider value={contextData}>
       <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
         <StatusBar style="auto"/>
         <TimerButton/>
         <CountDown timerDate={new Date(timerCount)}/>

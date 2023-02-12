@@ -2,6 +2,8 @@ import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
   timerCountDownText: {
-   fontSize: 30
+   fontSize: 50,
+    color: "white",
+    fontWeight: "bold"
   }
 });
