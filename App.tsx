@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {isNull} from "lodash";
 import {View} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 
@@ -14,6 +15,7 @@ const App = () => {
   const [timerCount, setTimerCount] = useState<number>(FOCUS_TIME_MINUTES);
   const [timerInterval, setTimerInterval] = useState<NodeJS.Timer | null>(null);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
+
   const startTimer = () => {
     setIsTimerRunning(true);
     const id = setInterval(() => setTimerCount((prev) => prev - 1000), 1000);
@@ -21,7 +23,7 @@ const App = () => {
   }
 
   const stopTimer = () => {
-    if (timerInterval !== null) clearInterval(timerInterval);
+    if (!isNull(timerInterval)) clearInterval(timerInterval);
     setIsTimerRunning(false);
   }
 
